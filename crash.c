@@ -1,5 +1,5 @@
 #include <stdlib.h>
 
 int main(void) {
-	free(1);
+	free((void*)1);
 }
