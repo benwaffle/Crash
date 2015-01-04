@@ -5,8 +5,6 @@ public class crash {
 	public static void main(String[] args) throws Exception {
 		Field privUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
 		privUnsafe.setAccessible(true);
-		Unsafe theUnsafe = (Unsafe) privUnsafe.get(null);
-		
-		theUnsafe.freeMemory(1);
+		((Unsafe) privUnsafe.get(null)).freeMemory(1);
 	}
 }
